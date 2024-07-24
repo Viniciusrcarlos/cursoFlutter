@@ -9,11 +9,7 @@ class Questionario extends StatelessWidget {
   final void Function() responder;
 
 
-  Questionario(
-      this.perguntas,
-      this.perguntaSelecionada,
-      this.responder,
-  );
+  Questionario(this.perguntas, this.perguntaSelecionada, this.responder);
 
   bool get temPerguntaSelecionada {
     return perguntaSelecionada < perguntas.length;

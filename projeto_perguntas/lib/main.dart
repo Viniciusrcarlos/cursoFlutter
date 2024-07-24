@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:projeto_perguntas/resultado.dart';
 import './questao.dart';
 import './resposta.dart';
-import './questionario.dart'
+import './questionario.dart';
 
 main() {
   runApp(PerguntaApp());
@@ -11,7 +11,7 @@ main() {
 class PerguntaAppState extends State<PerguntaApp> {
   var perguntaSelecionada = 0;
 
-  void _responder() {
+  void responder() {
     if (temPerguntaSelecionada) {
       setState(() {
         perguntaSelecionada++;
@@ -42,8 +42,6 @@ class PerguntaAppState extends State<PerguntaApp> {
 
   @override
   Widget build(BuildContext context) {
-
-
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -51,10 +49,10 @@ class PerguntaAppState extends State<PerguntaApp> {
         ),
         body: temPerguntaSelecionada
             ? Questionario(
-          perguntas: perguntas,
-          perguntaSelecionada: perguntaSelecionada,
-          
-        )
+                perguntas,
+                perguntaSelecionada,
+                responder
+              )
             : Resultado(),
       ),
     );
